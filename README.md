@@ -1,0 +1,3 @@
+A repo to track work on a react course and not lose anything.
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
