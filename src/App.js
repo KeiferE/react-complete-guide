@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person, { StyleRoot } from './Person/Person';
 import Radium from 'radium';
 import styled from 'styled-components';
@@ -72,6 +72,7 @@ class App extends Component {
     //     color: 'black'
     //   }
     // };
+    let btnClass = [classes.Button];
 
     let persons = null;
 
@@ -94,23 +95,24 @@ class App extends Component {
       //   backgroundColor: 'salmon',
       //   color: 'black'
       // }
+      btnClass.push(classes.Red);
     }
 
-    let classes = []; //red bold
+    let assignedClasses = []; //red bold
     if (this.state.persons.length <= 2) {
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
     if (this.state.persons.length <= 1) {
-      classes.push('bold');
+      assignedClasses.push(classes.bold);
     }
 
     return (
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi, I'm a React app</h1>
-        <p className={classes.join(' ')}>These are people</p>
-        <StyledButton alt={this.state.showPersons}
+        <p className={assignedClasses.join(' ')}>These are people</p>
+        <button className={btnClass.join(' ')}
           
-          onClick={this.togglerPersonHandler}>Toggle Persons</StyledButton>
+          onClick={this.togglerPersonHandler}>Toggle Persons</button>
         {persons}
       </div>
     );
