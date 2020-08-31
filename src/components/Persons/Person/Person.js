@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 import styled from 'styled-components';
+import Aux from '../../..hoc/Aux';
 
 import classes from'./Persons.css';
 

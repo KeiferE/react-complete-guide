@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classes from './Cockpit.css'
 
 const cockpit = (props) => {
+    useEffect(() => {
+        console.log('[Cockpit.js] useEffect');
+    })
     let assignedClasses = []; //red bold
     let btnClass = '';
     if (props.showPersons) {
@@ -26,4 +29,4 @@ const cockpit = (props) => {
     );
 };
 
-export default cockpit;
+export default React.memo(cockpit);
